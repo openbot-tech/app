@@ -1,25 +1,53 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Chart from './components/Chart';
+import Navbar from './components/NavBar';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      chartData: {},
+    };
+  }
+
+  componentWillMount() {
+    this.getChartData();
+  }
+
+  getChartData() {
+    this.setState({
+      chartData: {
+        labels: ['26/03', '27/03', '28/03', '29/03', '30/03', '31/03'],
+        datasets: [{
+          label: 'ETH / US$',
+          data: [
+            90,
+            230,
+            480,
+            322,
+            181,
+            617,
+          ],
+          backgroundColor: [
+            '#ffffff',
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(255, 99, 132, 0.6)',
+          ],
+        },
+      ],
+      },
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Navbar />
+        <Chart chartData={this.state.chartData} />
       </div>
     );
   }
