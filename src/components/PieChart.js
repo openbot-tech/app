@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { Line } from 'react-chartjs-2';
+import { Pie } from 'react-chartjs-2';
 
-class Chart extends Component {
+class PieChart extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,13 +12,13 @@ class Chart extends Component {
   render() {
     return (
       <div className="chart">
-        <Line
+        <Pie
         data={this.state.chartData}
         height={80}
         options={{
           title: {
             display: true,
-            text: 'Last Weeks Trades',
+            text: 'Your Portfolio',
             fontSize: 25,
           },
           legend: {
@@ -46,4 +46,4 @@ class Chart extends Component {
   }
 }
 
-export default Chart;
+export default PieChart;

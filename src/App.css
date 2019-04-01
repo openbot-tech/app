@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #eaeaed;
+  background-color: #fff;
 }
 
 .App-logo {
@@ -11,6 +11,20 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.container {
+  max-width: 80vw;
+}
+
+.indicators {
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+}
+
+.button {
+  text-decoration: underline;
 }
 
 #navbar {
